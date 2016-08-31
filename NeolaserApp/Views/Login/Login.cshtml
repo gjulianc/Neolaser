@@ -1,0 +1,56 @@
+﻿@model NeolaserApp.Models.usuario
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEOLASER | Login</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="~/Content/animate.css" rel="stylesheet">
+    <link href="~/Content/style.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+
+    <div class="middle-box text-center loginscreen  animated fadeInDown">
+        <div>
+            <div>
+
+                <h1 class="logo-name">NEO</h1>
+
+            </div>
+            <h3>Bienvenido</h3>
+            <p>
+                Portal de Gestión de auditorias de NEOLASER
+            </p>
+            
+            <form class="m-t" role="form" action=@Url.Action("ValidarUsuario","Login") method="post">
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Usuario" required="" name="email">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Contraseña" required="" name="contraseña">
+                </div>
+                <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+
+                
+            </form>
+            <p class="m-t"> <small>Desarrollado por <a href="http://www.qualimove.es">Qualimove SL</a> &copy; 2016</small> </p>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+

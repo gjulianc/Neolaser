@@ -10,8 +10,12 @@ namespace NeolaserApp.Controllers
     {
         public ActionResult Index()
         {
-            ViewData["SubTitle"] = "Welcome in ASP.NET MVC 5 INSPINIA SeedProject ";
-            ViewData["Message"] = "It is an application skeleton for a typical MVC 5 project. You can use it to quickly bootstrap your webapp projects.";
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Login", "Login");
+            }
+            ViewData["SubTitle"] = "Bienvenido al portal de NEOLASER";
+            ViewData["Message"] = "Fabricamos tus ideas.";
 
             return View();
         }
