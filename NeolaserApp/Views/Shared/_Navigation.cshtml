@@ -3,6 +3,9 @@
         <ul class="nav" id="side-menu">
             <li class="nav-header">
                 <div class="dropdown profile-element">
+                    <span>
+                        <img alt="image" class="img-circle" src="~/images/profile_small.jpg"/>
+                    </span>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear">
                             <span class="block m-t-xs">
@@ -15,14 +18,48 @@
                     </ul>
                 </div>
                 <div class="logo-element">
-                    IN+
+                    NEO
                 </div>
             </li>
-            <li class="@Html.IsSelected(action: "Index")">
+            <li class="@Html.IsSelected(controller: "Home")">
                 <a href="@Url.Action("Index", "Home")"><i class="fa fa-laptop"></i> <span class="nav-label">Main page</span> </a>
             </li>
+            
+            <li>
+                <a href="#"><i class="fa fa-sitemap"></i> <span class="nav-label">Maestros</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="@Url.Action("Dashboard_1", "Dashboards")">Elementos<span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level">
+                            <li class="@Html.IsSelected(action: "Dashboard_1")"><a href="@Url.Action("Dashboard_1", "Dashboards")">Subelementos</a></li>
+                        </ul>
+                    </li>
+                    <li class="@Html.IsSelected(controller: "Usuario")">
+                        <a href="@Url.Action("Index", "Home")"><i class="fa fa-user"></i> <span class="nav-label">Usuarios</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class="@Html.IsSelected(controller: "Maestro")">
+                <a href="@Url.Action("Minor", "Home")"><i class="fa fa-user"></i> <span class="nav-label">Maestros</span></a>
+                <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Dashboards", cssClass: "in")">
+                    <li class="@Html.IsSelected(action: "Dashboard_1")"><a href="@Url.Action("Dashboard_1", "Dashboards")">Elementos</a></li>
+                    <li class="@Html.IsSelected(action: "Dashboard_1")"><a href="@Url.Action("Dashboard_1", "Dashboards")">Subelementos</a></li>
+                   
+                </ul>
+            </li>
+            <li class="@Html.IsSelected(controller: "Cliente")">
+                <a href="@Url.Action("Minor", "Home")"><i class="fa fa-user"></i> <span class="nav-label">Clientes</span></a>
+                <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Dashboards", cssClass: "in")">
+                    <li class="@Html.IsSelected(action: "Dashboard_1")"><a href="@Url.Action("Dashboard_1", "Dashboards")">Auditorias</a></li>
+                    <li class="@Html.IsSelected(action: "Dashboard_1")"><a href="@Url.Action("Dashboard_1", "Dashboards")">Sucursales</a></li>
+                </ul>
+                
+            </li>
+            <li class="@Html.IsSelected(controller:"Incidencia")">
+                <a href="@Url.Action("Minor", "Home")"><i class="fa fa-user"></i> <span class="nav-label">Auditorias</span></a>
+            </li>
             <li class="@Html.IsSelected(action: "Minor")">
-                <a href="@Url.Action("Minor", "Home")"><i class="fa fa-desktop"></i> <span class="nav-label">Minor page</span></a>
+                <a href="@Url.Action("Minor", "Home")"><i class="fa fa-user"></i> <span class="nav-label">Gestión de Incidencias</span></a>
             </li>
         </ul>
     </div>
