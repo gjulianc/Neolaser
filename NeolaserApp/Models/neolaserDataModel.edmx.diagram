@@ -5,8 +5,13 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="482379f6da274fa9bc82e3565d92d8ca" Name="Diagram1">
-        <EntityTypeShape EntityType="neolaserdbModel.cliente" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="neolaserdbModel.usuario" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="neolaserdbModel.tCliente" Width="1.5" PointX="5" PointY="0.5" />
+        <EntityTypeShape EntityType="neolaserdbModel.tRole" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="neolaserdbModel.tSucursale" Width="1.5" PointX="7.25" PointY="0.5" />
+        <EntityTypeShape EntityType="neolaserdbModel.tUsuario" Width="1.5" PointX="2.875" PointY="0.5" />
+        <AssociationConnector Association="neolaserdbModel.Fk_Sucursales_Clientes" />
+        <AssociationConnector Association="neolaserdbModel.Fk_Usuarios_Clientes" />
+        <AssociationConnector Association="neolaserdbModel.Fk_Usuarios_Roles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -25,7 +25,9 @@ namespace NeolaserApp.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<cliente> clientes { get; set; }
-        public virtual DbSet<usuario> usuarios { get; set; }
+        public virtual DbSet<tCliente> tClientes { get; set; }
+        public virtual DbSet<tRole> tRoles { get; set; }
+        public virtual DbSet<tSucursale> tSucursales { get; set; }
+        public virtual DbSet<tUsuario> tUsuarios { get; set; }
     }
 }

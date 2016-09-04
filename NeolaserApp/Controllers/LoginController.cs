@@ -16,15 +16,15 @@ namespace NeolaserApp.Controllers
         }
 
         [HttpPost]
-        public ActionResult ValidarUsuario(usuario user)
+        public ActionResult ValidarUsuario(tUsuario user)
         {
             using (neolaserdbEntities db = new neolaserdbEntities())
             {
-                var usr = db.usuarios.Single(u => u.email == user.email && u.contraseña == user.contraseña);
+                var usr = db.tUsuarios.Single(u => u.Email == user.Email && u.Password == user.Password);
                 if (usr != null)
                 {
-                    Session["userID"] = usr.id;
-                    Session["userName"] = usr.nombre;
+                    Session["userID"] = usr.Id;
+                    Session["userName"] = usr.Nombre;
                     return RedirectToAction("Index","Home");
                 }
                 else

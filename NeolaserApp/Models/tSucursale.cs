@@ -12,16 +12,16 @@ namespace NeolaserApp.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class cliente
+    public partial class tSucursale
     {
-        public int id { get; set; }
-        public string cif { get; set; }
-        public int nombre { get; set; }
-        public string direccion { get; set; }
-        public string poblacion { get; set; }
-        public string provincia { get; set; }
-        public string codPostal { get; set; }
-        public string telefono { get; set; }
-        public string email { get; set; }
+        public int Id { get; set; }
+        public string CodSAP { get; set; }
+        public string Descripcion { get; set; }
+        public string Poblacion { get; set; }
+        public string Provincia { get; set; }
+        public string CodPostal { get; set; }
+        public Nullable<int> FkCliente { get; set; }
+    
+        public virtual tCliente tCliente { get; set; }
     }
 }
